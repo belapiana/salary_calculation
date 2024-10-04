@@ -27,3 +27,17 @@ departments: [
             {name: 'Grace',
             salary: 95000,
             subordinates: []}]}]};
+
+// Task 2: Create a Recursive Function to Calculate Total Salary for a Department
+
+
+function calculateDepartmentSalary (department) {
+    let totalSalary = 0
+    department.employees.forEach(employee => {totalSalary += employee.salary
+    employee.subordinates.forEach(subordinate => {totalSalary += calculateDepartmentSalary({ employees: [subordinate] })})})
+    return totalSalary
+}
+
+console.log(calculateDepartmentSalary(company.departments[0])) // Testing code with engineering department
+
+// 
