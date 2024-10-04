@@ -38,6 +38,14 @@ function calculateDepartmentSalary (department) {
     return totalSalary
 }
 
-console.log(calculateDepartmentSalary(company.departments[0])) // Testing code with engineering department
+console.log(calculateDepartmentSalary(company.departments[0])) // Testing function with engineering department
 
-// 
+// Task 3: Create a Function to Calculate the Total Salary for All Departments
+
+function calculateCompanySalary (company) {
+    let companySalary = 0
+    company.departments.forEach(department => {companySalary += calculateDepartmentSalary(department)})
+        return companySalary
+}
+
+console.log(calculateCompanySalary(company)) // Testing function with company data
